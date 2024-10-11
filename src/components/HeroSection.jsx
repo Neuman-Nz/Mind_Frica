@@ -20,7 +20,7 @@ const HeroSection = () => {
           href="#"
           className="bg-gradient-to-r from-purple-500 to-purple-800 py-3 px-4 mx-3 rounded-md"
         >
-          Enroll
+          Register
         </a>
         <a href="#" className="py-3 px-4 mx-3 rounded-md border">
           Documentation
