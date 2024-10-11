@@ -52,7 +52,7 @@ const Navbar = () => {
               ))}
             </ul>
             <div className="flex flex-col space-y-4">
-             <a href="#" className="py-2 px-3 border rounded-md flex justify-center items-center">
+             <a href="#" className="py-2 px-3 border rounded-md flex justify-center items-center pl-4">
                   Sign In
               </a>
               <a
