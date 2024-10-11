@@ -52,8 +52,8 @@ const Navbar = () => {
               ))}
             </ul>
             <div className="flex flex-col space-y-4">
-              <a href="#" className="py-2 px-5 border rounded-md">
-                Sign In
+             <a href="#" className="py-2 px-3 border rounded-md flex justify-center items-center">
+                  Sign In
               </a>
               <a
                 href="#"
