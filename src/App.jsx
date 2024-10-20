@@ -10,8 +10,11 @@ export const App = () => {
   return (
     <>
       <Navbar />
-      <div className="max-w-5xl mx-auto pt-20 px-6">
+      <div style={{height: "100vh"}}>
         <HeroSection />
+      </div>
+      
+      <div className="max-w-5xl mx-auto pt-20 px-6">
         <FeatureSection />
         <Gallery />
         <Testimonials />

@@ -1,0 +1,35 @@
+/* src/components/HeroSection.css */
+
+/* Background Image Animation (Sliding North to South) */
+.slide-bg {
+    background-position: center top;
+    animation: slideDown 10s infinite ease-in-out;
+  }
+  
+  @keyframes slideDown {
+    0% {
+      background-position: center top;
+    }
+    100% {
+      background-position: center bottom;
+    }
+  }
+  
+  /* Text Split Animation */
+  @keyframes splitText {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100px);
+    }
+  }
+  
+  .animate-split {
+    animation: splitText 2s ease forwards;
+  }
+  
+  .text-split {
+    display: inline-block;
+  }
+  
