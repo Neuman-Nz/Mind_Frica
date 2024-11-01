@@ -52,90 +52,76 @@
 
 // export default HeroSection;
 
+import React, { useRef, useEffect, useState } from "react";
+import div from "react-slick";
+import "./hero.css";
 
-import React, { useState, useEffect, useRef } from 'react';
-import video1 from '../assets/video1.mp4'; // Import the video file
+const HeroSection = ({ unlockScroll, heroLockedOnReEntry }) => {
+  const sliderRef = useRef(null); // To access the slider instance
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-const slides = [
-  { type: 'video', src: video1 }, // Video slide
-  { type: 'image', src: '/images/map2.jpg' },
-  { type: 'image', src: '/images/map3.jpg' },
-  { type: 'image', src: '/images/map4.jpg' },
-];
-
-const HeroSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isScrolling, setIsScrolling] = useState(false);
-  const containerRef = useRef(null);
-
-  const handleScroll = (e) => {
-    if (isScrolling) return;
-
-    setIsScrolling(true);
-
-    if (e.deltaY > 0) {
-      if (currentIndex < slides.length - 1) {
-        setCurrentIndex((prevIndex) => prevIndex + 1);
-      } else {
-        setCurrentIndex(0); // Loop back to the first slide
+  const settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    fade: true,
+    afterChange: (current) => {
+      setCurrentSlide(current); // Track current slide
+      if (current === 3) {  // If last slide is reached (adjust number for more slides)
+        unlockScroll();     // Unlock scroll after the last slide
       }
-    } else {
-      if (currentIndex > 0) {
-        setCurrentIndex((prevIndex) => prevIndex - 1);
-      }
+    },
+  };
+
+  // Handle scroll event to change slides
+  const handleScroll = (event) => {
+    // Prevent scrolling if locked or heroLockedOnReEntry is true
+    if (heroLockedOnReEntry) {
+      event.preventDefault(); // Prevent default scrolling behavior
+      return; // Exit function
     }
 
-    setTimeout(() => setIsScrolling(false), 800); // Debounce
+    const scrollDirection = event.deltaY > 0 ? "down" : "up";
+
+    if (scrollDirection === "down") {
+      // Go to the next slide
+      if (sliderRef.current && currentSlide < 3) {
+        sliderRef.current.slickNext();
+      }
+    } else {
+      // Go to the previous slide
+      if (sliderRef.current && currentSlide > 0) {
+        sliderRef.current.slickPrev();
+      }
+    }
   };
 
   useEffect(() => {
-    const handleWindowScroll = (e) => {
-      handleScroll(e);
-    };
-
-    window.addEventListener('wheel', handleWindowScroll);
-
+    window.addEventListener("wheel", handleScroll);
     return () => {
-      window.removeEventListener('wheel', handleWindowScroll);
+      window.removeEventListener("wheel", handleScroll);
     };
-  }, [currentIndex, isScrolling]);
+  }, [currentSlide]); // Track current slide for scroll behavior
 
   return (
-    <div ref={containerRef} className="relative w-full h-screen overflow-hidden">
-      <div
-        className="absolute inset-0 transition-transform duration-8500"
-        style={{ transform: `translateY(-${currentIndex * 100}%)` }}
-      >
-        {slides.map((slide, index) => (
-          <div key={index} className="h-screen w-full relative">
-            {slide.type === 'video' ? (
-              <video
-                src={slide.src}
-                autoPlay
-                loop
-                muted
-                className="object-cover w-full h-full"
-              />
-            ) : (
-              <img
-                src={slide.src}
-                alt={`Slide ${index + 1}`}
-                className="object-cover w-full h-full"
-              />
-            )}
-
-            {/* First slide with static centered words */}
-            {index === 0 && (
-             <div className="absolute inset-0 flex items-center justify-center" style={{ width: '100%', transform: 'translateY(-57%)' }}>
-             <div className="text-purple font-bold flex" style={{ fontFamily: 'Bebas Neue, sans-serif', letterSpacing: '0' }}>
-               <span className="transform -rotate-90" style={{ fontSize: '8.7em', width: '6.5em', marginLeft: '31%', marginRight: '-30.5%' }}>INSPIRE</span>
-               <span className="transform -rotate-90" style={{ fontSize: '8.7em', width: '6.5em', marginRight: '-28%', marginTop: '0.5em' }}>INNOVATE</span> 
-               <span className="transform -rotate-90" style={{ fontSize: '8.7em', width: '6.5em' }}>IMPACT</span>
-             </div>
-           </div>
-           )}
-          </div>
-        ))}
+    <div>
+      <div className="slide">
+        <div className="background background1"></div>
+        <div className="caption">Caption 1</div>
+      </div>
+      <div className="slide">
+        <div className="background background2"></div>
+        <div className="caption">Caption 2</div>
+      </div>
+      <div className="slide">
+        <div className="background background3"></div>
+        <div className="caption">Caption 3</div>
+      </div>
+      <div className="slide">
+        <div className="background background4"></div>
+        <div className="caption">Caption 4</div>
       </div>
     </div>
   );

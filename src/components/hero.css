@@ -1,0 +1,14 @@
+.box{
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxContent{
+  background-color: rebeccapurple;
+  height: 100px;
+  width: 100px;
+  border-radius: 20px;
+}
+  
