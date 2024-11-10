@@ -1,6 +1,11 @@
 /* src/components/HeroSection.css */
 
 /* Background Image Animation (Sliding North to South) */
+.App{
+  min-height: 100vh; /* Ensure the App takes the full height of the viewport */
+  overflow: hidden;
+}
+
 .slide-bg {
     background-position: center top;
     animation: slideDown 10s infinite ease-in-out;

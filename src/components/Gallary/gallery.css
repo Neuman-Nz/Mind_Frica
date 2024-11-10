@@ -1,0 +1,249 @@
+/* 
+  .galleryMain{
+    width: 100%;
+    height: 100vh;
+    background-color: #00102c;
+  }
+
+  #carouselExampleCaptions{
+    background-color: #00102c !important;
+  }
+  
+
+.feartursImg{
+  width: 370px !important;
+  height: 370px !important;
+  border-radius: 50% !important;
+  z-index: 5;
+  position: relative;
+  border: none !important;
+  outline: none !important;
+  background-image: conic-gradient(rgba(82, 104, 110, 0.1), #00C0F0);
+}
+
+.featuresContainer{
+  height: 90vh !important;
+  width: 100vw !important;
+  position: relative !important;
+  z-index: 9;
+}
+
+.slideIndicators{
+  z-index: 12 !important;
+}
+
+.fcImageTxt{
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  position: absolute !important;
+  top: 40% !important;
+  left: 56.59% !important;
+  transform: translate(-50%, -50%) !important;
+  gap: 40px;
+  z-index: 30;
+}
+
+.headerLeft{
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 40px;
+  width: 30.3%;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: right;
+  color: white;
+}
+
+.rightContainerFt{
+  width: 43.3vw;
+}
+
+.rightHeader{
+  font-size: 34px;
+  font-weight: 500;
+  color: white;
+}
+
+.txt{
+  margin: 10px 0;
+  color: white;
+}
+
+.btnFeaturesTxt{
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}
+
+.displayNone{
+  display: none !important;
+}
+
+.btnFeatures{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: white;
+}
+
+.btnArrow{
+  height: 32px;
+  width: 32px;
+  background-color: #00C0F0  ;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.slideContainer{
+  position: relative;
+  
+}
+
+.firstLineMap{
+  position: absolute;
+  top: -4%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+}
+
+.slideIndicators{
+  display: flex !important;
+  gap: 15% !important;
+}
+
+.flmVerticle{
+  width: 1.5px;
+  height: 85%;
+  background-color: white;
+  position: relative;
+  z-index: 2;
+  position: relative;
+}
+
+.iconFeatures{
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.flmHorizontal1{
+  width: 35%;
+  height: 0.8px;
+  background-color: white;
+  position: absolute;
+  bottom: 15%;
+  left: 15.009%;
+}
+
+  .flmHorizontalV1{
+  width: 0.8px;
+  height: 4%;
+  background-color: white;
+  position: absolute;
+  bottom: 11%;
+  left: 15.009%;
+}
+
+.flmHorizontal2{
+  width: 17.5%;
+  height: 0.8px;
+  background-color: white;
+  position: absolute;
+  bottom: 15%;
+  left: 32.55%;
+}
+  .flmHorizontalV2{
+  width: 0.8px;
+  height: 4%;
+  background-color: white;
+  position: absolute;
+  bottom: 11%;
+  left: 32.55%;
+}
+
+
+
+
+.flmHorizontal1Right{
+  width: 35%;
+  height: 0.8px;
+  background-color: white;
+  position: absolute;
+  bottom: 15%;
+  right: 15%;
+}
+
+.cirleBlock{
+  width: 370px !important;
+  height: 370px !important;
+  background-color: #00102c !important;
+  position: absolute !important;
+  top: 40% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  border-radius: 50% !important;
+  z-index: 4;
+}
+
+.flmHorizontalV1Right{
+  width: 0.8px;
+  height: 4%;
+  background-color: white;
+  position: absolute;
+  bottom: 11%;
+  right: 15%;
+}
+
+.flmHorizontal2Right{
+  width: 17.6%;
+  height: 0.8px;
+  background-color: white;
+  position: absolute;
+  bottom: 15%;
+  right: 32.45%;
+}
+
+.flmHorizontalV2Right{
+  width: 0.8px;
+  height: 4%;
+  background-color: white;
+  position: absolute;
+  bottom: 11%;
+  right: 32.45%;
+} 
+
+.flmHorizontalV3Right{
+  width: 0.5px;
+  height: 4%;
+  background-color: #00102c;
+  position: absolute;
+  bottom: 9%;
+  right: 49.6%;
+  transform: translate(-50%, -50%);
+}
+
+.flmHorizontal3{
+  width: 0.4%;
+  height: 1px;
+  background-color: #00102c;
+  position: absolute;
+  bottom: 15%;
+  right: 49.375%;
+  transform: translate(-50%, -50%);
+}
+
+.btnCarousel{
+  max-width: 200px !important;
+  min-width: 100px !important;
+  height: fit-content !important;
+} */

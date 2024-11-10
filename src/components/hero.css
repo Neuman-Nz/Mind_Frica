@@ -1,14 +1,304 @@
-.box{
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.rotateMain{
+    transform: rotate(-90deg);
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    line-height: 80px;
+    position: relative;
+
 }
 
-.boxContent{
-  background-color: rebeccapurple;
-  height: 100px;
-  width: 100px;
-  border-radius: 20px;
+.btnHeroAbsolute{
+    position: absolute;
+    bottom: 0;
 }
-  
+
+.rotateContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rotateMain p{
+    position: relative;
+    color: black;
+    width: 100%;
+    height: fit-content;
+    text-align: center;
+    font-weight: 800;
+    font-size: 90px;
+    z-index: 30;
+    color: white;
+    transition: transform 0.5s ease;
+}
+
+.circleBG{
+    height: 170%;
+    width: 100%;
+    background-color: #00163b;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 10;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.animate-circle {
+    opacity: 1;
+}
+
+
+/* Animation keyframes for different <p> tags */
+@keyframes moveGlobal {
+    to {
+        transform: translateY(-40px);
+    }
+}
+
+@keyframes moveModernAndReady {
+    to {
+        transform: translateY(230px);
+    }
+}
+
+@keyframes undoGlobal {
+    from {
+        transform: translateY(-40px);
+    }
+    to {
+        transform: translateY(-115px);
+    }
+}
+
+@keyframes undoModernAndReady {
+    from {
+        transform: translateY(150px);
+    }
+    to {
+        transform: translateY(-115px);
+    }
+}
+@keyframes undoModernAndGlobal {
+    from {
+        transform: translateY(-115px);
+    }
+    to {
+        transform: translateY(-165px);
+    }
+}
+
+.undo-Modern-global{
+    animation: undoModernAndGlobal 0.5s forwards
+}
+
+@keyframes undoReady {
+    from {
+        transform: translateY(230px);
+    }
+    to {
+        transform: translateY(-165px);
+    }
+}
+
+.undo-ready{
+    animation: undoReady 0.5s forwards !important;
+}
+
+.undo-global {
+    animation: undoGlobal 0.5s forwards;
+}
+
+.undo-modern,
+.undo-ready {
+    animation: undoModernAndReady 0.5s forwards;
+}
+
+/* Triggered animation classes */
+.animate-global {
+    animation: moveGlobal 0.5s forwards;
+}
+
+.animate-modern,
+.animate-ready {
+    animation: moveModernAndReady 0.5s forwards;
+}
+
+
+.mainDiv{
+    height: 100vh;
+    width: 100%;
+    background-image: url("https://i.postimg.cc/3xNk0gbK/pexels-anthony-macajone-874129-1874636.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.btnArrowHero{
+    height: 45px !important;
+    width: 45px !important;
+    background-color: #00163b;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 10px !important;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* .rotateMain span{
+    transform: rotate(90deg);
+    display: inline-block;
+    width: 230px;
+    text-align: left;
+    position: absolute;
+    line-height: 30px;
+    font-size: 17px;
+    font-weight: 400;
+    top: 40%;
+    right: 20%;
+    color: white;
+    z-index: 20;
+    display: none;
+    transition: display 0.5s ease;
+} */
+/* Existing styles */
+.span3 {
+    transform: rotate(90deg); /* Start slightly below */
+    width: 230px;
+    text-align: left;
+    position: absolute;
+    line-height: 30px;
+    font-size: 17px;
+    font-weight: 400;
+    top: 50% !important;
+    right: 22% !important;
+    color: white;
+    z-index: 20;
+    display: none;
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.8s ease, transform 0.8s ease, display 0.8s ease;
+}
+.span2 {
+    transform: rotate(90deg); /* Start slightly below */
+    width: 230px;
+    text-align: left;
+    position: absolute;
+    line-height: 30px;
+    font-size: 17px;
+    font-weight: 400;
+    top: 48% !important;
+    right: 20% !important;
+    color: white;
+    z-index: 20;
+    display: none;
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.8s ease, transform 0.8s ease, display 0.8s ease;
+}
+
+/* Animation keyframes to slide in from below */
+@keyframes fadeInFromYspan3 {
+    from {
+        transform: rotate(90deg) translateX(200px); /* Start position */
+        opacity: 0; /* Start invisible */
+        display: none;
+    }
+    to {
+        transform: rotate(90deg) translateX(0); /* Original position */
+        opacity: 1; /* Fully visible */
+        display: inline-block;
+    }
+}
+@keyframes fadeInFromY {
+    from {
+        transform: rotate(90deg) translateX(120px); /* Start position */
+        opacity: 0; /* Start invisible */
+        display: none;
+    }
+    to {
+        transform: rotate(90deg) translateX(0); /* Original position */
+        opacity: 1; /* Fully visible */
+        display: inline-block;
+    }
+}
+
+/* Class to trigger the fade-in effect */
+.span2FadeIn {
+    animation: fadeInFromY 0.8s forwards;
+    opacity: 1;
+    display: inline-block;
+}
+.span3FadeIn {
+    animation: fadeInFromYspan3 0.8s forwards;
+    opacity: 1;
+    display: inline-block;
+}
+
+.span1{
+    transform: rotate(90deg);
+    width: 230px;
+    text-align: left;
+    position: absolute;
+    line-height: 30px;
+    font-size: 17px;
+    font-weight: 400;
+    top: 40%;
+    right: 20%;
+    color: white;
+    z-index: 20;
+    display: none;
+    opacity: 0;
+    transition: display 0.8s ease opacity 0.8s ease;
+}
+
+.span1playback{
+    animation: span1playback 0.5s ease !important;
+}
+
+.span2Exit{
+    animation: span2Exit 0.5s ease !important;
+}
+
+@keyframes span2Exit {
+    from{
+        display: inline-block;
+        opacity: 1;
+      transform: translateX(0) rotate(90deg);
+    }
+
+    to{
+        display: none;
+        opacity: 0;
+        transform: translateY(-400px) rotate(90deg);
+    }
+}
+@keyframes span1playback {
+    from{
+        display: inline-block;
+        opacity: 1;
+      transform: translateX(0) rotate(90deg);
+    }
+
+    to{
+        display: none;
+        opacity: 0;
+        transform: translateY(-400px) rotate(90deg);
+    }
+}
+
+.span1Opacity{
+    opacity: 1;
+    display: inline-block;
+}
+
+/* .span3{
+    top: 115% !important;
+    right: 12% !important;
+} */
