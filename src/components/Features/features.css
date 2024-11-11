@@ -31,7 +31,7 @@
     justify-content: center;
     position: absolute !important;
     top: 40% !important;
-    left: 53.2% !important;
+    left: 50% !important;
     transform: translate(-50%, -50%) !important;
     gap: 40px;
     z-index: 30;
@@ -43,7 +43,7 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     line-height: 40px;
-    width: 53.3%;
+    width: 56.3%;
     display: flex;
     flex-wrap: wrap;
     text-align: right;
@@ -181,7 +181,7 @@
     background-color: white !important;
     position: absolute !important;
     top: 40% !important;
-    left: 50% !important;
+    left: 49.9% !important;
     transform: translate(-50%, -50%) !important;
     border-radius: 50% !important;
     z-index: 4;

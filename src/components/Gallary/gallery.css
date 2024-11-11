@@ -1,249 +1,212 @@
-/* 
-  .galleryMain{
-    width: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100vw;
     height: 100vh;
-    background-color: #00102c;
-  }
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
 
-  #carouselExampleCaptions{
-    background-color: #00102c !important;
-  }
-  
-
-.feartursImg{
-  width: 370px !important;
-  height: 370px !important;
-  border-radius: 50% !important;
-  z-index: 5;
+.slide{
+  width: 95%;
+  height: 90%;
+  margin: auto;
   position: relative;
-  border: none !important;
-  outline: none !important;
-  background-image: conic-gradient(rgba(82, 104, 110, 0.1), #00C0F0);
 }
 
-.featuresContainer{
-  height: 90vh !important;
-  width: 100vw !important;
-  position: relative !important;
-  z-index: 9;
+ .container .slide .item {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 30px 50px #505050;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+    position: relative;
 }
 
-.slideIndicators{
-  z-index: 12 !important;
-}
-
-.fcImageTxt{
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  position: absolute !important;
-  top: 40% !important;
-  left: 56.59% !important;
-  transform: translate(-50%, -50%) !important;
-  gap: 40px;
-  z-index: 30;
-}
-
-.headerLeft{
-  font-size: 40px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  line-height: 40px;
-  width: 30.3%;
-  display: flex;
-  flex-wrap: wrap;
-  text-align: right;
-  color: white;
-}
-
-.rightContainerFt{
-  width: 43.3vw;
-}
-
-.rightHeader{
-  font-size: 34px;
-  font-weight: 500;
-  color: white;
-}
-
-.txt{
-  margin: 10px 0;
-  color: white;
-}
-
-.btnFeaturesTxt{
-  font-size: 20px;
-  font-weight: 500;
-  color: white;
-}
-
-.displayNone{
-  display: none !important;
-}
-
-.btnFeatures{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  color: white;
-}
-
-.btnArrow{
-  height: 32px;
-  width: 32px;
-  background-color: #00C0F0  ;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.slideContainer{
-  position: relative;
-  
-}
-
-.firstLineMap{
+.content{
   position: absolute;
-  top: -4%;
+  top: 40%;
+  left: 10%;
+  z-index: 15;
+}
+
+.content .des{
+  color: white;
+  font-weight: 100;
+  font-size: 14px;
+  width: 400px ;
+}
+
+.content .name{
+  color: white;
+  font-weight: 600;
+  font-size: 24px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.content button{
+  background-color: #00102c;
+  height: 40px;
+  width: 80px;
+  color: white;
+  padding: 5px;
+  margin-top: 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.content .name::after {
+  content: '';
+  position: absolute;
   left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 4px;
+  background-color: white;
+  transition: width 0.5s ease;
+}
+
+.content .name:hover::after {
+  width: 100%;
+}
+
+.imgGallery{
+  height: 280px;
+  width: 180px;
+  border-radius: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+}
+
+.imgGalleryContainer{
+  position: absolute;
+  display: flex;
+  align-items: center;
   height: 100%;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 0;
+  gap: 20px;
+  justify-content: right;
+  right: -530px;
+  overflow-x: hidden;
+}
+.GAL-h1{
+  align-items: center;
 }
 
-.slideIndicators{
-  display: flex !important;
-  gap: 15% !important;
+/*
+.item-1, .item-2 {
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
 }
 
-.flmVerticle{
-  width: 1.5px;
-  height: 85%;
-  background-color: white;
-  position: relative;
-  z-index: 2;
-  position: relative;
+.item-3 {
+    left: 50%;
+}
+.item-4 {
+    left: calc(50% + 220px);
+}
+.item-5 {
+    left: calc(50% + 440px);
 }
 
-.iconFeatures{
-  width: 100% !important;
-  display: flex !important;
-  justify-content: center !important;
+.item:nth-child(n + 6) {
+    left: calc(50% + 660px);
+    opacity: 0;
 }
 
-.flmHorizontal1{
-  width: 35%;
-  height: 0.8px;
-  background-color: white;
-  position: absolute;
-  bottom: 15%;
-  left: 15.009%;
+.item .content {
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 300px;
+    text-align: left;
+    color: #eee;
+    transform: translate(0, -50%);
+    font-family: system-ui;
+    display: none;
 }
 
-  .flmHorizontalV1{
-  width: 0.8px;
-  height: 4%;
-  background-color: white;
-  position: absolute;
-  bottom: 11%;
-  left: 15.009%;
+.item-2 .content {
+    display: block;
 }
 
-.flmHorizontal2{
-  width: 17.5%;
-  height: 0.8px;
-  background-color: white;
-  position: absolute;
-  bottom: 15%;
-  left: 32.55%;
-}
-  .flmHorizontalV2{
-  width: 0.8px;
-  height: 4%;
-  background-color: white;
-  position: absolute;
-  bottom: 11%;
-  left: 32.55%;
+.content .name {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
 }
 
-
-
-
-.flmHorizontal1Right{
-  width: 35%;
-  height: 0.8px;
-  background-color: white;
-  position: absolute;
-  bottom: 15%;
-  right: 15%;
+.content .des {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
 }
 
-.cirleBlock{
-  width: 370px !important;
-  height: 370px !important;
-  background-color: #00102c !important;
-  position: absolute !important;
-  top: 40% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  border-radius: 50% !important;
-  z-index: 4;
+.content button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
 }
 
-.flmHorizontalV1Right{
-  width: 0.8px;
-  height: 4%;
-  background-color: white;
-  position: absolute;
-  bottom: 11%;
-  right: 15%;
+@keyframes animate {
+    from {
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
 }
 
-.flmHorizontal2Right{
-  width: 17.6%;
-  height: 0.8px;
-  background-color: white;
-  position: absolute;
-  bottom: 15%;
-  right: 32.45%;
+.button {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
 }
 
-.flmHorizontalV2Right{
-  width: 0.8px;
-  height: 4%;
-  background-color: white;
-  position: absolute;
-  bottom: 11%;
-  right: 32.45%;
-} 
-
-.flmHorizontalV3Right{
-  width: 0.5px;
-  height: 4%;
-  background-color: #00102c;
-  position: absolute;
-  bottom: 9%;
-  right: 49.6%;
-  transform: translate(-50%, -50%);
+.button button {
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    border: 1px solid #000;
+    transition: 0.3s;
 }
 
-.flmHorizontal3{
-  width: 0.4%;
-  height: 1px;
-  background-color: #00102c;
-  position: absolute;
-  bottom: 15%;
-  right: 49.375%;
-  transform: translate(-50%, -50%);
-}
-
-.btnCarousel{
-  max-width: 200px !important;
-  min-width: 100px !important;
-  height: fit-content !important;
+.button button:hover {
+    background: #ababab;
+    color: #fff;
 } */

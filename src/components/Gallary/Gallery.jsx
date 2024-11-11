@@ -1,327 +1,141 @@
-// import React from "react";
-// import "./gallery.css"
-// export function Gallery() {
-//   const data = [
-//     {
-//       imgelink:
-//         "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-//     },
-//     {
-//       imgelink:
-//         "https://images.unsplash.com/photo-1432462770865-65b70566d673?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80",
-//     },
-//     {
-//       imgelink:
-//         "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
-//     },
-//     {
-//       imgelink:
-//         "https://images.unsplash.com/photo-1518623489648-a173ef7824f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2762&q=80",
-//     },
-//     {
-//       imgelink:
-//         "https://images.unsplash.com/photo-1682407186023-12c70a4a35e0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2832&q=80",
-//     },
-//   ];
- 
-//   const [active, setActive] = React.useState(
-//     "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-//   );
- 
-//   return (
-//     <div className="grid gap-4 galleryMain" style={{marginTop: "30px",}}>
-//         <div className="example conic">
-//     Conic Gradient
-//   </div>
-//     </div>
-//   );
-// }
-
-// export default Gallery;
-
-import { features } from "../../constants";
-import { BsArrowRightShort } from "react-icons/bs";
-import { IoLogoAndroid } from "react-icons/io";
-import { IoLogoAngular } from "react-icons/io";
-import { IoLogoApple } from "react-icons/io";
-import { IoLogoBitbucket } from "react-icons/io";
-import { IoLogoBuffer } from "react-icons/io";
+import React, { useState } from "react";
 import "./gallery.css";
-import { useState } from "react";
 
 const Gallery = () => {
+  const [items, setItems] = useState([
+    {
+      image: "https://i.ibb.co/qCkd9jS/img1.jpg",
+      name: "Switzerland",
+      description: "X-Dev, Transforming code into visual poetry..!",
+    },
+    {
+      image: "https://i.ibb.co/jrRb11q/img2.jpg",
+      name: "Finland",
+      description: "X-Dev, Transforming code into visual poetry..!",
+    },
+    {
+      image: "https://i.ibb.co/NSwVv8D/img3.jpg",
+      name: "Iceland",
+      description: "X-Dev, Transforming code into visual poetry..!",
+    },
+    {
+      image: "https://i.ibb.co/Bq4Q0M8/img4.jpg",
+      name: "Australia",
+      description: "X-Dev, Transforming code into visual poetry..!",
+    },
+    {
+      image: "https://i.ibb.co/jTQfmTq/img5.jpg",
+      name: "Netherland",
+      description: "X-Dev, Transforming code into visual poetry..!",
+    },
+    {
+      image: "https://i.ibb.co/RNkk6L0/img6.jpg",
+      name: "Ireland",
+      description: "X-Dev, Transforming code into visual poetry..!",
+    },
+  ]);
 
-  const [indicator1Gallery, setIndicator1Gallery] = useState(true)
-  const [indicator2Gallery, setIndicator2Gallery] = useState(false)
-  const [indicator3Gallery, setIndicator3Gallery] = useState(false)
-  const [indicator4Gallery, setIndicator4Gallery] = useState(false)
-  const [indicator5Gallery, setIndicator5Gallery] = useState(false)
+  const nextSlide = () => {
+    setItems((prevItems) => {
+      const newItems = [...prevItems];
+      newItems.push(newItems.shift()); // Move first item to the end
+      return newItems;
+    });
+  };
 
-  const handleInd1Gallery = () => {
-    setIndicator1Gallery(true)
-    setIndicator2Gallery(false)
-    setIndicator3Gallery(false)
-    setIndicator4Gallery(false)
-    setIndicator5Gallery(false)
-  }
-  const handleInd2Gallery = () => {
-    setIndicator1Gallery(false)
-    setIndicator2Gallery(true)
-    setIndicator3Gallery(false)
-    setIndicator4Gallery(false)
-    setIndicator5Gallery(false)
-  }
-  const handleInd3Gallery = () => {
-    setIndicator1Gallery(false)
-    setIndicator2Gallery(false)
-    setIndicator3Gallery(true)
-    setIndicator4Gallery(false)
-    setIndicator5Gallery(false)
-  }
-  const handleInd4Gallery = () => {
-    setIndicator1Gallery(false)
-    setIndicator2Gallery(false)
-    setIndicator3Gallery(false)
-    setIndicator4Gallery(true)
-    setIndicator5Gallery(false)
-  }
-  const handleInd5Gallery = () => {
-    setIndicator1Gallery(false)
-    setIndicator2Gallery(false)
-    setIndicator3Gallery(false)
-    setIndicator4Gallery(false)
-    setIndicator5Gallery(true)
-  }
+  const prevSlide = () => {
+    setItems((prevItems) => {
+      const newItems = [...prevItems];
+      newItems.unshift(newItems.pop()); // Move last item to the start
+      return newItems;
+    });
+  };
 
   return (
-    <div id="carouselExampleCaptions" class="carousel slide slideContainer" data-bs-ride="carousel">
-      {/* <div className="cirleBlock"></div>
-      <div className="firstLineMap">
-        <div className="flmVerticle"></div>
-        <div className={`${indicator1Gallery ? "flmHorizontalV1" : "displayNone"}`}></div> 
-        <div className={`${indicator2Gallery ? "flmHorizontal2" : "displayNone"}`}></div>
-        <div className={`${indicator4Gallery ? "flmHorizontal1Right" : "displayNone"}`}></div>
-        <div className={`${indicator5Gallery ? "flmHorizontal2Right" : "displayNone"}`}></div>
-        <div className={`${indicator1Gallery ? "flmHorizontal1" : "displayNone"}`}></div>
-        <div className={`${indicator2Gallery ? "flmHorizontalV2" : "displayNone"}`}></div>
-        <div className={`${indicator4Gallery ? "flmHorizontalV1Right" : "displayNone"}`}></div>
-        <div className={`${indicator5Gallery ? "flmHorizontalV2Right" : "displayNone"}`}></div>
-        <div className={`${indicator3Gallery ? "flmHorizontalV3Right" : "displayNone"}`}></div>
-        <div className={`${indicator3Gallery ? "flmHorizontal3" : "displayNone"}`}></div>
+    <div>
+      {/* <div class="GAL-h1">
+      <h1>EXPLORE WHAT WE'VE DONE BEFORE</h1>
+      </div> */}
+       
+       <div class="container">
+      <div class="slide">
+        <div
+          class="item"
+          style={{ backgroundImage: "url(https://i.ibb.co/qCkd9jS/img1.jpg)" }}
+        >
+          <div class="content">
+            <div class="name">Lorem, ipsum.</div>
+            <div class="des">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perspiciatis, repudiandae explicabo. Unde laudantium corporis in
+              beatae incidunt excepturi iusto eveniet reiciendis similique,
+              veniam vero qui dicta praesentium officiis accusamus corrupti?
+            </div>
+            <button>View</button>
+          </div>
+          <div className="imgGalleryContainer">
+          {items.map((item, index) => {
+            return (
+              <div key={index} className="imgGallery" style={{backgroundImage: `url(${item.image})`}}>
+              </div>
+            );
+          })}
+          </div>
+          
+        </div>
+
+        {/* <div class="item"
+              style={{backgroundImage: "url(https://i.ibb.co/jrRb11q/img2.jpg)"}}>
+              <div class="content">
+                  <div class="name">Finland</div>
+                  <div class="des">X-Dev, Transforming code into visual poetry..!</div>
+                  <button>See More</button>
+              </div>
+          </div>
+          <div class="item"
+              style={{backgroundImage: "url(https://i.ibb.co/NSwVv8D/img3.jpg)"}}>
+              <div class="content">
+                  <div class="name">Iceland</div>
+                  <div class="des">X-Dev, Transforming code into visual poetry..!</div>
+                  <button>See More</button>
+              </div>
+          </div>
+          <div class="item"
+              style={{backgroundImage: "url(https://i.ibb.co/Bq4Q0M8/img4.jpg)"}}>
+              <div class="content">
+                  <div class="name">Australia</div>
+                  <div class="des">X-Dev, Transforming code into visual poetry..!</div>
+                  <button>See More</button>
+              </div>
+          </div>
+          <div class="item"
+              style={{backgroundImage: "url(https://i.ibb.co/jTQfmTq/img5.jpg)"}}>
+              <div class="content">
+                  <div class="name">Netherland</div>
+                  <div class="des">X-Dev, Transforming code into visual poetry..!</div>
+                  <button>See More</button>
+              </div>
+          </div>
+          <div class="item"
+              style={{backgroundImage: "url(https://i.ibb.co/RNkk6L0/img6.jpg)"}}>
+              <div class="content">
+                  <div class="name">Ireland</div>
+                  <div class="des">X-Dev, Transforming code into visual poetry..! </div>
+                  <button>See More</button>
+              </div>
+          </div> */}
       </div>
-      <div class="carousel-indicators slideIndicators">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="0"
-          aria-current="true"
-          aria-label="Slide 1"
-          className="active btnCarousel"
-          onClick={handleInd1Gallery}
-        >
-          <IoLogoAndroid size={40} className="iconFeatures"/>
-          <span style={{width: "fit-content"}}>Logo Name</span>
+
+      <div class="button">
+        <button class="prev">
+          <i class="fa-solid fa-arrow-left"></i>
         </button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-          className="btnCarousel"
-          onClick={handleInd2Gallery}
-        >
-          <IoLogoAngular size={40} className="iconFeatures" />
-          <span style={{width: "fit-content"}}>Logo Name</span>
-        </button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-          className="btnCarousel"
-          onClick={handleInd3Gallery}
-        >
-          <IoLogoApple size={40} className="iconFeatures" />
-          <span style={{width: "fit-content"}}>Logo Name</span>
-        </button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="3"
-          aria-label="Slide 4"
-          className="btnCarousel"
-          onClick={handleInd5Gallery}
-        >
-          <IoLogoBitbucket size={40} className="iconFeatures" />
-          <span style={{width: "fit-content"}}>Logo Name</span>
-        </button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="4"
-          aria-label="Slide 5"
-          className="btnCarousel"
-          onClick={handleInd4Gallery}
-        >
-          <IoLogoBuffer size={40} className="iconFeatures" />
-          <span style={{width: "fit-content"}}>Logo Name</span>
+        <button class="next">
+          <i class="fa-solid fa-arrow-right"></i>
         </button>
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active featuresContainer">
-          <div className="fcImageTxt">
-            <p className="headerLeft">Lorem ips dolor</p>
-            <img src="" class="d-block w-100 feartursImg"/>
-            <div className="rightContainerFt">
-              <h2 className="rightHeader">Lorem ips dolor sit.</h2>
-              <p className="txt">
-                Lorem ips dolor sit amet, consectetur adipisicing elit.
-                Dignissimos ipsam eaque sit. Minus, ducimus perferendis Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit. Soluta,
-                maxime?!
-              </p>
-              <div className="btnFeatures">
-                <p className="btnFeaturesTxt">Lorem ips dolor sit</p>
-                <BsArrowRightShort size={20} className="btnArrow" color="white"/>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item featuresContainer">
-          <div className="fcImageTxt">
-            <p className="headerLeft">Lorem ips dolor</p>
-            <img src="" class="d-block w-100 feartursImg"/>
-            <div className="rightContainerFt">
-              <h2 className="rightHeader">Lorem ips dolor sit.</h2>
-              <p className="txt">
-                Lorem ips dolor sit amet, consectetur adipisicing elit.
-                Dignissimos ipsam eaque sit. Minus, ducimus perferendis Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit. Soluta,
-                maxime?!
-              </p>
-              <div className="btnFeatures">
-                <p className="btnFeaturesTxt">Lorem ips dolor sit</p>
-                <BsArrowRightShort size={20} className="btnArrow" color="white"/>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item featuresContainer">
-          <div className="fcImageTxt">
-            <p className="headerLeft">Lorem ips dolor</p>
-            <img src="" class="d-block w-100 feartursImg"/>
-            <div className="rightContainerFt">
-              <h2 className="rightHeader">Lorem ips dolor sit.</h2>
-              <p className="txt">
-                Lorem ips dolor sit amet, consectetur adipisicing elit.
-                Dignissimos ipsam eaque sit. Minus, ducimus perferendis Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit. Soluta,
-                maxime?!
-              </p>
-              <div className="btnFeatures">
-                <p className="btnFeaturesTxt">Lorem ips dolor sit</p>
-                <BsArrowRightShort size={20} className="btnArrow" color="white"/>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item featuresContainer">
-          <div className="fcImageTxt">
-            <p className="headerLeft">Lorem ips dolor</p>
-            <img src="" class="d-block w-100 feartursImg"/>
-            <div className="rightContainerFt">
-              <h2 className="rightHeader">Lorem ips dolor sit.</h2>
-              <p className="txt">
-                Lorem ips dolor sit amet, consectetur adipisicing elit.
-                Dignissimos ipsam eaque sit. Minus, ducimus perferendis Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit. Soluta,
-                maxime?!
-              </p>
-              <div className="btnFeatures">
-                <p className="btnFeaturesTxt">Lorem ips dolor sit</p>
-                <BsArrowRightShort size={20} className="btnArrow" color="white"/>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item featuresContainer">
-          <div className="fcImageTxt">
-            <p className="headerLeft">Lorem ips dolor</p>
-            <img src="" class="d-block w-100 feartursImg"/>
-            <div className="rightContainerFt">
-              <h2 className="rightHeader">Lorem ips dolor sit.</h2>
-              <p className="txt">
-                Lorem ips dolor sit amet, consectetur adipisicing elit.
-                Dignissimos ipsam eaque sit. Minus, ducimus perferendis Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit. Soluta,
-                maxime?!
-              </p>
-              <div className="btnFeatures">
-                <p className="btnFeaturesTxt">Lorem ips dolor sit</p>
-                <BsArrowRightShort size={20} className="btnArrow" color="white"/>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-       */}
     </div>
-//     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-//   <div class="carousel-indicators">
-//     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-//     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-//     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-//   </div>
-//   <div class="carousel-inner">
-//     <div class="carousel-item active">
-//       <img src="..." class="d-block w-100" alt="..."/>
-//       <div class="carousel-caption d-none d-md-block">
-//         <h5>First slide label</h5>
-//         <p>Some representative placeholder content for the first slide.</p>
-//       </div>
-//     </div>
-//     <div class="carousel-item">
-//       <img src="..." class="d-block w-100" alt="..."/>
-//       <div class="carousel-caption d-none d-md-block">
-//         <h5>Second slide label</h5>
-//         <p>Some representative placeholder content for the second slide.</p>
-//       </div>
-//     </div>
-//     <div class="carousel-item">
-//       <img src="..." class="d-block w-100" alt="..."/>
-//       <div class="carousel-caption d-none d-md-block">
-//         <h5>Third slide label</h5>
-//         <p>Some representative placeholder content for the third slide.</p>
-//       </div>
-//     </div>
-//   </div>
-//   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-//     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-//     <span class="visually-hidden">Previous</span>
-//   </button>
-//   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-//     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-//     <span class="visually-hidden">Next</span>
-//   </button>
-// </div>
+    </div>
   );
 };
 

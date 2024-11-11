@@ -7,6 +7,8 @@ import FeatureSection from "./components/Features/FeatureSection";
 import Gallery from "./components/Gallary/Gallery"
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
+import AboutUs from './components/AboutUs/aboutUs';
+import NewsLetter from './components/Newsletter/Newsletter';
 
 export const App = () => {
   return (
@@ -14,8 +16,10 @@ export const App = () => {
       {/* <Navbar /> */}
         <HeroSection />
         <FeatureSection />
+        <AboutUs/>
         <Gallery />
-        <Testimonials />
+        {/* <Testimonials /> */}
+        <NewsLetter/>
         <Footer />
       
     </div>

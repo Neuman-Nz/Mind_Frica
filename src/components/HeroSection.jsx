@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BsArrowRightShort } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import './hero.css';
+import video from "../assets/video1.mp4"
 
 function HeroSection() {
   const [animate, setAnimate] = useState(false);
@@ -28,11 +29,11 @@ function HeroSection() {
     <div className='mainDiv'>
       <div className='rotateContainer'>
         <div className='rotateMain'>
-          <p className={animate ? 'animate-global' : animate2 ? "undo-global": animate3 ? "undo-Modern-global"  : ""}>GLOBAL</p>
+          <p className={animate ? 'animate-global' : animate2 ? "undo-global": animate3 ? "undo-Modern-global"  : ""}>INSPIRE</p>
           <span className={`span1 ${animate ? 'span1Opacity' : animate2 ? 'span1playback' : ""}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minima aspernatur atque nostrum animi accusantium nesciunt numquam assumenda iste illo?</span>
-          <p className={animate ? 'animate-modern' : animate2 ? "undo-modern" : animate3 ? "undo-Modern-global" : ""}>MODERN</p>
+          <p className={animate ? 'animate-modern' : animate2 ? "undo-modern" : animate3 ? "undo-Modern-global" : ""}>INNOVATE</p>
           <span className={`span2 ${animate2 ? "span2FadeIn" : animate3 ? "span2Exit" : ""}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minima aspernatur atque nostrum animi accusantium nesciunt numquam assumenda iste illo?</span>
-          <p className={animate ? 'animate-ready' : animate2 ? "animate-ready" : animate3 ? "undo-ready" : ""}>READY</p>
+          <p className={animate ? 'animate-ready' : animate2 ? "animate-ready" : animate3 ? "undo-ready" : ""}>IMPACT</p>
           <span className={`span3 ${animate3 ? "span3FadeIn" : ""}`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error minima aspernatur atque nostrum animi accusantium nesciunt numquam assumenda iste illo?</span>
           <div className={`circleBG ${animate ? 'animate-circle' : animate2 ? 'animate-circle' : animate3 ? "animate-circle" : ""}`}></div>
         </div>

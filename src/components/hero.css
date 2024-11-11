@@ -128,9 +128,10 @@
 
 
 .mainDiv{
+    position: relative;
     height: 100vh;
     width: 100%;
-    background-image: url("https://i.postimg.cc/3xNk0gbK/pexels-anthony-macajone-874129-1874636.jpg");
+    background-image: url("https://i.postimg.cc/qMFrVPc4/Africa.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
