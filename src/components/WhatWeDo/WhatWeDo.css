@@ -1,0 +1,272 @@
+/* Add styles for the vertical line */
+.vertical-line {
+    position: absolute;
+    left: 0; 
+    top: 0;
+    height: 100%; 
+    width: 1px; 
+    background-color: white; 
+    z-index: 2; 
+    left: 3rem;
+  }
+.vertical-line2 {
+    position: absolute;
+    left: 0; 
+    top: 0;
+    height: 100%; 
+    width: 1px; 
+    background-color: white; 
+    z-index: 2; 
+    left: 76rem;
+}
+  
+  .what-we-do-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 50%;
+  }
+  
+  .background-image {
+    width: 100%;
+    height: 90vh; /* 50% of the viewport height */
+  }
+  
+  .white-line {
+    position: absolute;
+    top: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .white-line2 {
+    position: absolute;
+    top: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .line-extension {
+    height: 1px;
+    background-color: rgb(238, 238, 242);
+    flex: 1;
+  }
+  
+  .left {
+    margin-right: 1rem;
+  }
+  
+  .right {
+    margin-left: 1rem;
+  }
+  
+  .title {
+    font-size: 5rem; /* Huge font size */
+    font-weight: 600;
+    color: white;
+    z-index: 1;
+    left: 7rem;
+    position: absolute;
+    top: 12rem; /* Adjust this value to move the title down */
+  }
+  
+  .organization-title {
+    font-size: 2rem; /* Adjust font size */
+    font-weight: 700;
+    color: white;
+    z-index: 1;
+    position: absolute;
+    top: 8rem; /* Adjust the position as needed */
+    left: 7rem; /* Adjust the position as needed */
+  }
+  
+  /* New Section Styling */
+.new-section {
+    position: relative;
+    background-color: rgb(15, 15, 53); /* Navy blue background */
+    padding: 5rem 0;
+    text-align: center;
+  }
+  
+  .new-vertical-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: white;
+    z-index: 2;
+  }
+  
+  .new-vertical-line.left {
+    left: 3.85%;
+  }
+  
+  .new-vertical-line.right {
+    right: 46.3px;
+  }
+  
+  .new-horizontal-line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+  }
+  
+  .new-horizontal-line.top {
+    top: 10%;
+  }
+  
+  .new-horizontal-line.bottom {
+    bottom: 5%;
+  }
+  
+  .section-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+  }
+  
+  .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .section-paragraph {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .arrow-container {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(50%);
+    z-index: 1;
+  }
+  
+  .small-vertical-line {
+    position: absolute;
+    width: 1px;
+    height: 60px;
+    background-color: white;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -5px;
+  }
+  
+  .arrow-circle {
+    position: absolute;
+    top: -35px; /* Adjust to position the arrow inside the circle */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 60%;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .arrow {
+    color: white;
+    font-size: 0.7em; /* Adjust the arrow size */
+  }
+
+  .section-3 {
+    background-color: rgb(15, 15, 53); /* Background color for the section */
+  }
+  
+  .section-3-container-3 {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 1rem;
+    /* margin-bottom: 3rem; */
+  }
+  
+  .section-content-left-3 {
+    width: 50%;
+    margin-left: 3rem;
+  }
+  
+  .section-title-3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fdfafa;
+  }
+  
+  .section-paragraph-3 {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #fdfafa;
+  }
+  
+  .read-more-3 {
+    display: flex;
+    align-items: center;
+    color: #fdfafa;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  
+  .read-more-3 .arrow-3 {
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .section-image-3 {
+    width: 43%;
+  }
+  
+  .image-container-3 {
+    width: 100%;
+    padding-top: 100%; /* Aspect ratio 1:1 for a circle */
+    position: relative;
+  }
+  
+  .round-image-3 {
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%; /* Makes the image round */
+  }
+
+  .vertical-line-3 {
+    width: 1px;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+  
+  /* Inverted layout */
+  .section-3-container-3.inverted-3 {
+    flex-direction: row-reverse; /* Reverse the row layout */
+  }
+  
+  .section-3-container-3.inverted-3 .section-content-left-3 {
+    order: 1; /* Ensure content is on the "right" in the reversed layout */
+  }
+  
+  .section-3-container-3.inverted-3 .section-image-3 {
+    order: 2; /* Ensure image is on the "left" in the reversed layout */
+  }
