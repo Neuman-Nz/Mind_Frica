@@ -17,7 +17,7 @@ function HeroSection({sideMenuState, setSideMenuState}) {
     setAnimate(true);
     setAnimate2(false);
   };
-
+// bbbbbbbbbb
   const triggerAnimation2 = () => {
     setAnimate(false);
     setAnimate2(true);
