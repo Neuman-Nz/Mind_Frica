@@ -57,7 +57,6 @@ const Gallery = () => {
   };
 
   const handleClick = () => {
-    alert("hello")
     navigate("/careers")
   }
 
