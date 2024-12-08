@@ -1,0 +1,206 @@
+.infoContainer{
+    height: 160vh;
+    width: 100%;
+    background-color: #657595;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    
+}
+
+.infoTop{
+    display: flex;
+    width: 90%;
+    height: 40vh;
+    margin: auto;
+    margin-top: 130px;
+    z-index: 10;
+}
+
+.infoTopInner{
+    padding: 20px;
+    padding-top: 0;
+    z-index: 10;
+}
+
+.infoTopInner h1{
+    font-size: 35px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.infoTopInner p{
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+    margin-bottom: 15px;
+}
+
+.infoTopInner b{
+    font-weight: 600;
+    font-size: 19px;
+    color: white;
+}
+
+.btnArrowInfo{
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00163b !important;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s;
+  }
+
+  .btnArrowInfo:hover{
+    background-color: #16d0c5;
+  }
+
+  .infoIconContainer{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: fit-content;
+    margin-top: 20px;
+    z-index: 10;
+  }
+
+  .infoBottom{
+    width: 90%;
+    margin: 0 auto;
+    height: 75vh;
+    display: flex;
+    padding: 0 20px 0 20px;
+    z-index: 10;
+    position: relative;
+  }
+
+  .infoBottomTxt{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    /* transform: translate(-50%, -50%); */
+    z-index: 110;
+  }
+
+  .mainCircleContainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    /* transform: translate(-50%, -50%); */
+    z-index: 100;
+  }
+
+  .infoBottomTxt p{
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  .infoBottomTxt h1{
+    font-size: 55px;
+    font-weight: 800;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  .circleContainer {
+    width: 400px;
+    height: 400px; /* Diameter of the circle */
+    z-index: 100;
+    border-radius: 50%;
+    transform: rotate(-90deg);
+    position: relative;
+  }
+  
+  .infoImgSemiCircle {
+    width: 400px; 
+    height: 200px; /* Half of the height */ 
+    background: rgb(4,238,235);
+    background: linear-gradient(90deg, rgba(4,238,235,0.5775560224089635) 35%, rgba(0,228,255,0.7232142857142857) 100%, rgba(0,228,255,0.9893207282913166) 100%);
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+    /* transform: rotate(-90deg); */
+    /* Center it vertically */
+  }
+  
+  .infoImgSemiCircle2 {
+    width: 400px; 
+  height: 200px; /* Half of the height */ 
+  background: rgb(9,252,245);
+  background: linear-gradient(90deg, rgba(9,252,245,0.006127450980392135) 0%, rgba(4,238,235,0.1601890756302521) 35%, rgba(0,228,255,0.5131302521008403) 100%);
+  border-top-left-radius: 200px;
+  border-top-right-radius: 200px;
+  transform: rotate(180deg);;
+  }
+  
+  .infoBottomLeft{
+    width: 50%;
+    height: 100%;
+    background-image: url("https://i.postimg.cc/cLY6CD5Y/pexels-rdne-6646990.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 10;
+    filter: brightness(75%);
+    border: 1px solid white;
+    position: relative;
+    
+  }
+
+  .infoBottomRight{
+    width: 50%;
+    height: 100%;
+    background-image: url("https://i.postimg.cc/NFyZR8jX/pexels-pixabay-70573.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 10;
+    filter: brightness(75%);
+    border-right: 1px solid white;
+  }
+
+  .hrInfo{
+    width: 90%;
+    margin: 0 auto 0 auto;
+    background-color: white;
+    height: 1px;
+
+  }
+
+  .verticleInfo{
+    height: 101%;
+    width: 0.5px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 48%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+  }

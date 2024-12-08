@@ -5,11 +5,10 @@ import { IoLogoAngular } from "react-icons/io";
 import { IoLogoApple } from "react-icons/io";
 import { IoLogoBitbucket } from "react-icons/io";
 import { IoLogoBuffer } from "react-icons/io";
-import "./features.css";
+import "./feature2.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-const FeatureSection = () => {
+const FeatureSection2 = () => {
   const [indicator1, setIndicator1] = useState(true);
   const [indicator2, setIndicator2] = useState(false);
   const [indicator3, setIndicator3] = useState(false);
@@ -52,16 +51,9 @@ const FeatureSection = () => {
     setIndicator5(true);
   };
 
-  const navigate = useNavigate()
-
-const handleClick = () => {
-  alert("hello")
-  navigate("/careers")
-}
-
   return (
     <div className="MainFeaturesContainer">
-      <div id="carouselExampleIndicators" class="carousel slide slideContainer">
+      <div id="carouselExampleIndicators2" class="carousel slide slideContainer">
         <div className="cirleBlock"></div>
         <div className="firstLineMap">
           <div className="flmVerticle"></div>
@@ -96,10 +88,10 @@ const handleClick = () => {
             className={`${indicator3 ? "flmHorizontal3" : "displayNone"}`}
           ></div>
         </div>
-        <div class="carousel-indicators slideIndicators">
+        <div class="carousel-indicators slideIndicators" style={{gap: "30%"}}>
           <button
             type="button"
-            data-bs-target="#carouselExampleIndicators"
+            data-bs-target="#carouselExampleIndicators2"
             data-bs-slide-to="0"
             aria-current="true"
             aria-label="Slide 1"
@@ -111,7 +103,7 @@ const handleClick = () => {
           </button>
           <button
             type="button"
-            data-bs-target="#carouselExampleIndicators"
+            data-bs-target="#carouselExampleIndicators2"
             data-bs-slide-to="1"
             aria-label="Slide 2"
             className="btnCarousel"
@@ -122,7 +114,7 @@ const handleClick = () => {
           </button>
           <button
             type="button"
-            data-bs-target="#carouselExampleIndicators"
+            data-bs-target="#carouselExampleIndicators2"
             data-bs-slide-to="2"
             aria-label="Slide 3"
             className="btnCarousel"
@@ -133,7 +125,7 @@ const handleClick = () => {
           </button>
           <button
             type="button"
-            data-bs-target="#carouselExampleIndicators"
+            data-bs-target="#carouselExampleIndicators2"
             data-bs-slide-to="3"
             aria-label="Slide 4"
             className="btnCarousel"
@@ -144,7 +136,7 @@ const handleClick = () => {
           </button>
           <button
             type="button"
-            data-bs-target="#carouselExampleIndicators"
+            data-bs-target="#carouselExampleIndicators2"
             data-bs-slide-to="4"
             aria-label="Slide 5"
             className="btnCarousel"
@@ -173,8 +165,7 @@ const handleClick = () => {
                 </p>
                 <div className="btnFeatures">
                   <p className="btnFeaturesTxt">Lorem ips dolor sit</p>
-                  <BsArrowRight size={15} className="btnArrow" onClick={handleClick} />
-                  <button onClick={handleClick}>Click</button>
+                  <BsArrowRight size={15} className="btnArrow" />
                 </div>
               </div>
             </div>
@@ -197,8 +188,7 @@ const handleClick = () => {
                 </p>
                 <div className="btnFeatures">
                   <p className="btnFeaturesTxt">Lorem ips dolor sit</p>
-                  <BsArrowRight size={15} className="btnArrow" onClick={handleClick} />
-                  <button onClick={handleClick}>Click</button>
+                  <BsArrowRight size={15} className="btnArrow" />
                 </div>
               </div>
             </div>
@@ -221,8 +211,7 @@ const handleClick = () => {
                 </p>
                 <div className="btnFeatures">
                   <p className="btnFeaturesTxt">Lorem ips dolor sit</p>
-                  <BsArrowRight size={15} className="btnArrow" onClick={handleClick} />
-                  <button onClick={handleClick}>Click</button>
+                  <BsArrowRight size={15} className="btnArrow" />
                 </div>
               </div>
             </div>
@@ -245,8 +234,7 @@ const handleClick = () => {
                 </p>
                 <div className="btnFeatures">
                   <p className="btnFeaturesTxt">Lorem ips dolor sit</p>
-                  <BsArrowRight size={15} className="btnArrow" onClick={handleClick} />
-                  <button onClick={handleClick}>Click</button>
+                  <BsArrowRight size={15} className="btnArrow" />
                 </div>
               </div>
             </div>
@@ -269,8 +257,7 @@ const handleClick = () => {
                 </p>
                 <div className="btnFeatures">
                   <p className="btnFeaturesTxt">Lorem ips dolor sit</p>
-                  <BsArrowRight size={15} className="btnArrow" onClick={handleClick} />
-                  <button onClick={handleClick}>Click</button>
+                  <BsArrowRight size={15} className="btnArrow" />
                 </div>
               </div>
             </div>
@@ -279,7 +266,7 @@ const handleClick = () => {
         <button
           class="carousel-control-prev"
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          data-bs-target="#carouselExampleIndicators2"
           data-bs-slide="prev"
         >
           <span class="carousel-control-prev-icon visually-hidden" aria-hidden="true"></span>
@@ -288,7 +275,7 @@ const handleClick = () => {
         <button
           class="carousel-control-next"
           type="button"
-          data-bs-target="#carouselExampleIndicators"
+          data-bs-target="#carouselExampleIndicators2"
           data-bs-slide="next"
         >
           <span class="carousel-control-next-icon visually-hidden" aria-hidden="true"></span>
@@ -299,4 +286,4 @@ const handleClick = () => {
   );
 };
 
-export default FeatureSection;
+export default FeatureSection2;

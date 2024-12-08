@@ -10,7 +10,18 @@
 
 .btnHeroAbsolute{
     position: absolute;
-    bottom: 0;
+    bottom: 50px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.btnHeroAbsolute button{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: white;
+    color: #00163b;
 }
 
 .rotateContainer{
@@ -35,13 +46,15 @@
 }
 
 .circleBG{
-    height: 170%;
-    width: 100%;
+    height: 480px;
+    width: 480px;
     background-color: #00163b;
     position: absolute;
     border-radius: 50%;
     z-index: 10;
-    top: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     opacity: 0;
     transition: opacity 0.5s ease;
 }
@@ -54,7 +67,7 @@
 /* Animation keyframes for different <p> tags */
 @keyframes moveGlobal {
     to {
-        transform: translateY(-40px);
+        transform: translateY(-150px);
     }
 }
 
@@ -66,10 +79,10 @@
 
 @keyframes undoGlobal {
     from {
-        transform: translateY(-40px);
+        transform: translateY(-150px);
     }
     to {
-        transform: translateY(-115px);
+        transform: translateY(-200px);
     }
 }
 
@@ -78,15 +91,15 @@
         transform: translateY(150px);
     }
     to {
-        transform: translateY(-115px);
+        transform: translateY(-200px);
     }
 }
 @keyframes undoModernAndGlobal {
     from {
-        transform: translateY(-115px);
+        transform: translateY(-200px);
     }
     to {
-        transform: translateY(-165px);
+        transform: translateY(-300px);
     }
 }
 
@@ -99,7 +112,7 @@
         transform: translateY(230px);
     }
     to {
-        transform: translateY(-165px);
+        transform: translateY(-305px);
     }
 }
 
@@ -131,7 +144,7 @@
     position: relative;
     height: 100vh;
     width: 100%;
-    background-image: url("https://i.postimg.cc/qMFrVPc4/Africa.jpg");
+    background-image: url("https://i.postimg.cc/ncpCqjSY/Whats-App-Image-2024-12-08-at-21-40-50.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -172,15 +185,15 @@
 } */
 /* Existing styles */
 .span3 {
-    transform: rotate(90deg); /* Start slightly below */
-    width: 230px;
+    transform: rotate(90deg);
+    width: 255px;
     text-align: left;
     position: absolute;
     line-height: 30px;
     font-size: 17px;
-    font-weight: 400;
-    top: 50% !important;
-    right: 22% !important;
+    font-weight: 500;
+    top: -18%;
+    right: 25%;
     color: white;
     z-index: 20;
     display: none;
@@ -188,15 +201,15 @@
     transition: opacity 0.8s ease, transform 0.8s ease, display 0.8s ease;
 }
 .span2 {
-    transform: rotate(90deg); /* Start slightly below */
-    width: 230px;
+    transform: rotate(90deg);
+    width: 255px;
     text-align: left;
     position: absolute;
     line-height: 30px;
     font-size: 17px;
-    font-weight: 400;
-    top: 48% !important;
-    right: 20% !important;
+    font-weight: 500;
+    top: -8%;
+    right: 25%;
     color: white;
     z-index: 20;
     display: none;
@@ -215,6 +228,19 @@
         transform: rotate(90deg) translateX(0); /* Original position */
         opacity: 1; /* Fully visible */
         display: inline-block;
+    }
+}
+
+@keyframes fadeoutImpact {
+    from {
+        transform: rotate(90deg) translateX(0); /* Original position */
+        opacity: 1; /* Fully visible */
+        display: inline-block;
+    }
+    to  {
+        transform: rotate(90deg) translateX(200px); /* Start position */
+        opacity: 0; /* Start invisible */
+        display: none;
     }
 }
 @keyframes fadeInFromY {
@@ -242,21 +268,35 @@
     display: inline-block;
 }
 
+.impactPlayback {
+    animation: fadeoutImpact 0.8s forwards;
+    color: red;
+    /* opacity: 0;
+    display: none; */
+}
+
 .span1{
     transform: rotate(90deg);
-    width: 230px;
+    width: 255px;
     text-align: left;
     position: absolute;
     line-height: 30px;
     font-size: 17px;
-    font-weight: 400;
-    top: 40%;
-    right: 20%;
+    font-weight: 500;
+    top: -18%;
+    right: 25%;
     color: white;
     z-index: 20;
     display: none;
     opacity: 0;
     transition: display 0.8s ease opacity 0.8s ease;
+}
+
+.span1 b, .span2 b, .span3 b{
+    font-weight: 900;
+    font-size: 24px;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .span1playback{
@@ -303,3 +343,145 @@
     top: 115% !important;
     right: 12% !important;
 } */
+
+.sideMenu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1005;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 1s ease-in-out;
+}
+
+.sideMenu.open {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .sideMenu.close {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+.sideMenuFixed{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.sideMenuLeft{
+    width: 75%;
+    height: 100vh;
+    background-color: rgba(0, 22, 59, 0.7);
+    filter: brightness(50%);
+    filter: blur(15px);
+    opacity: 0; /* Hidden by default */
+  visibility: hidden;
+}
+
+@keyframes slideIn {
+    from {
+      right: -25%; /* Start off-screen */
+    }
+    to {
+      right: 0; /* End in its visible position */
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      right: 0; /* Start in its visible position */
+    }
+    to {
+      right: -25%; /* End off-screen */
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  
+  .sideMenuRight {
+    position: fixed;
+    top: 0;
+    width: 25%;
+    height: 100vh;
+    background-color: #16d0c5;
+    filter: brightness(2px);
+  }
+  
+  .sideMenuRight.show {
+    animation: slideIn 0.5s ease forwards; /* Trigger slide-in animation */
+  }
+  
+  .sideMenuRight.hide {
+    animation: slideOut 0.5s ease forwards; /* Trigger slide-out animation */
+  }
+  
+
+  .sideMenuLeft.visible {
+    animation: fadeIn 0.5s ease forwards 0.2s; /* Fade in with a delay */
+    visibility: visible;
+  }
+  
+  .sideMenuLeft.hidden {
+    animation: fadeOut 0.5s ease forwards;
+  }
+
+.sideMenuRight ul{
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+
+.sideMenuRight ul li{
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #00163b;
+    border-bottom: 1px solid rgba(0, 22, 59, 0.4);
+    padding: 15px 0;
+}
+
+.closeIcons{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 20px;
+}
+
+.closeIcons .icon {
+    color: #00163b;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.closeIcons .icon:hover {
+    color: white;
+}

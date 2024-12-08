@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
+
 import "./gallery.css";
+import { useNavigate } from "react-router-dom";
 
 const Gallery = () => {
   const [items, setItems] = useState([
@@ -35,6 +38,8 @@ const Gallery = () => {
     },
   ]);
 
+  const navigate = useNavigate()
+
   const nextSlide = () => {
     setItems((prevItems) => {
       const newItems = [...prevItems];
@@ -51,90 +56,120 @@ const Gallery = () => {
     });
   };
 
+  const handleClick = () => {
+    alert("hello")
+    navigate("/careers")
+  }
+
   return (
-    <div>
-      {/* <div class="GAL-h1">
-      <h1>EXPLORE WHAT WE'VE DONE BEFORE</h1>
-      </div> */}
-       
-       <div class="container">
-      <div class="slide">
-        <div
-          class="item"
-          style={{ backgroundImage: "url(https://i.ibb.co/qCkd9jS/img1.jpg)" }}
-        >
-          <div class="content">
-            <div class="name">Lorem, ipsum.</div>
-            <div class="des">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis, repudiandae explicabo. Unde laudantium corporis in
-              beatae incidunt excepturi iusto eveniet reiciendis similique,
-              veniam vero qui dicta praesentium officiis accusamus corrupti?
+    <div className="mainContainerGallery">
+      <div className="galleryTop">
+        <p>Lorem, ipsum dolor.</p>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+      </div>
+      <div id="carouselExample" className="carousel slide">
+        <div className="carousel-inner">
+          <div className="carousel-item active carousel-item-gallery">
+            <img
+              src="https://i.postimg.cc/vTLbM9NR/pexels-suraphat-933624-1.jpg"
+              className="d-block w-100 slideImg"
+              alt="..."
+            />
+            <div className="circleBGGallery">
+              <div className="circleBGGalleryH1">
+                <h1>Reward</h1>
+              </div>
+
+              <div className="circleBGGalleryInner">
+                <h2>The world is your</h2>
+                <p>
+                  Exciting career opportunities. Support for your whole family.
+                  Unrivalled sense of community. Your commitment to our cause
+                  deserves rewards like no other.
+                </p>
+                <BsArrowRight
+                  size={15}
+                  className="btnArrowGallery"
+                  color="white"
+                  onClick={handleClick}
+                />
+              </div>
             </div>
-            <button>View</button>
           </div>
-          <div className="imgGalleryContainer">
-          {items.map((item, index) => {
-            return (
-              <div key={index} className="imgGallery" style={{backgroundImage: `url(${item.image})`}}>
+          <div className="carousel-item carousel-item-gallery">
+            <img
+              src="https://i.postimg.cc/gjTJ13XY/pexels-newmanphotographs-14831726.jpg"
+              className="d-block w-100 slideImg"
+              alt="..."
+            />
+            <div className="circleBGGallery">
+              <div className="circleBGGalleryH1">
+                <h1>Reward</h1>
               </div>
-            );
-          })}
+
+              <div className="circleBGGalleryInner">
+                <h2>The world is your</h2>
+                <p>
+                  Exciting career opportunities. Support for your whole family.
+                  Unrivalled sense of community. Your commitment to our cause
+                  deserves rewards like no other.
+                </p>
+                <BsArrowRight
+                  size={15}
+                  className="btnArrowGallery"
+                  color="white"
+                  onClick={handleClick}
+                />
+              </div>
+            </div>
           </div>
-          
+          <div className="carousel-item carousel-item-gallery">
+            <img
+              src="https://i.postimg.cc/bNnpq740/pexels-lagosfoodbank-6472410.jpg"
+              className="d-block w-100 slideImg"
+              alt="..."
+            />
+            <div className="circleBGGallery">
+              <div className="circleBGGalleryH1">
+                <h1>Reward</h1>
+              </div>
+
+              <div className="circleBGGalleryInner">
+                <h2>The world is your</h2>
+                <p>
+                  Exciting career opportunities. Support for your whole family.
+                  Unrivalled sense of community. Your commitment to our cause
+                  deserves rewards like no other.
+                </p>
+                <BsArrowRight
+                  size={15}
+                  className="btnArrowGallery"
+                  color="white"
+                  onClick={handleClick}
+                />
+              </div>
+            </div>
+          </div>
         </div>
-
-        {/* <div class="item"
-              style={{backgroundImage: "url(https://i.ibb.co/jrRb11q/img2.jpg)"}}>
-              <div class="content">
-                  <div class="name">Finland</div>
-                  <div class="des">X-Dev, Transforming code into visual poetry..!</div>
-                  <button>See More</button>
-              </div>
-          </div>
-          <div class="item"
-              style={{backgroundImage: "url(https://i.ibb.co/NSwVv8D/img3.jpg)"}}>
-              <div class="content">
-                  <div class="name">Iceland</div>
-                  <div class="des">X-Dev, Transforming code into visual poetry..!</div>
-                  <button>See More</button>
-              </div>
-          </div>
-          <div class="item"
-              style={{backgroundImage: "url(https://i.ibb.co/Bq4Q0M8/img4.jpg)"}}>
-              <div class="content">
-                  <div class="name">Australia</div>
-                  <div class="des">X-Dev, Transforming code into visual poetry..!</div>
-                  <button>See More</button>
-              </div>
-          </div>
-          <div class="item"
-              style={{backgroundImage: "url(https://i.ibb.co/jTQfmTq/img5.jpg)"}}>
-              <div class="content">
-                  <div class="name">Netherland</div>
-                  <div class="des">X-Dev, Transforming code into visual poetry..!</div>
-                  <button>See More</button>
-              </div>
-          </div>
-          <div class="item"
-              style={{backgroundImage: "url(https://i.ibb.co/RNkk6L0/img6.jpg)"}}>
-              <div class="content">
-                  <div class="name">Ireland</div>
-                  <div class="des">X-Dev, Transforming code into visual poetry..! </div>
-                  <button>See More</button>
-              </div>
-          </div> */}
-      </div>
-
-      <div class="button">
-        <button class="prev">
-          <i class="fa-solid fa-arrow-left"></i>
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev"
+        >
+          <BsArrowLeft size={15} className="btnArrowGallerySlide" />
+          <span className="visually-hidden">Previous</span>
         </button>
-        <button class="next">
-          <i class="fa-solid fa-arrow-right"></i>
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+        >
+          <BsArrowRight size={15} className="btnArrowGallerySlide" />
+          <span className="visually-hidden">Next</span>
         </button>
       </div>
-    </div>
     </div>
   );
 };

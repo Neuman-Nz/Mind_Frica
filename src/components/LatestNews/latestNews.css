@@ -1,0 +1,138 @@
+.latestNewsContainer{
+    height: fit-content;
+    width: 100%;
+    position: relative;
+    padding: 0 20px;
+    
+}
+
+.topLatestInfoHr{
+    position: absolute;
+    background-color: white;
+    filter: brightness(50%);
+    height: 10%;
+    width: 1px;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+.latesNewsVerticle{
+    height: 40%;
+    width: 0.2px;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    right: 50%;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+.latestNewsInner{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto 0 auto;
+    position: relative;
+}
+
+.latestH1{
+    font-size: 35px;
+    color: #00163b;
+    padding-top: 130px;
+    padding-bottom: 30px;
+}
+
+.slider-container{
+    position: relative !important;
+    width: 100%;
+    height: 80% ;
+    margin-top: 30px;
+    padding-bottom: 80px;
+}
+
+.slickItem{
+    display: block;
+     background: transparent;
+     position: absolute;
+     top: -28%;
+     right: 0%;
+     color: white;
+}
+
+.slickItemNext{
+    display: block;
+     background: transparent;
+     position: absolute;
+     top: -28%;
+     right: 5%;
+     color: white;
+}
+
+.btnArrowInfoLatest{
+    height: 40px;
+    width: 40px;
+    background-color: transparent !important;
+    border-radius: 50%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black !important;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s;
+  }
+
+  .btnArrowInfoLatest:hover{
+    background-color: rgb(162, 162, 162) !important;
+  }
+  
+  .btnArrowSlickInfoTop{
+    height: 40px;
+    width: 40px;
+    background-color: #16d0c5;
+    filter: brightness(90%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00163b !important;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.5s;
+  }
+
+  .slickInfoTop{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 10px 0;
+  }
+
+  .slickInfoTop p{
+    margin: 0;
+    font-weight: 500;
+    font-size: 17px;
+  }
+
+  .slickSlideItemContainer{
+    padding: 15px;
+  }
+
+  .slickSlideItemContainer h1{
+    font-size: 18px;
+    font-weight: 600;
+    color: #00163b;
+  }
+
+  .slickSlideItemContainer p{
+    color: #657595;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+
+  .slickSlideItemContainer .btnArrowSlickInfoTop{
+    margin-top: 20px;
+  }

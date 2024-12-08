@@ -1,0 +1,202 @@
+.footerContainer{
+    height: 75vh;
+    width: 100%;
+    position: relative;
+}
+
+.borderLeftFooter{
+    height: 100%;
+    position: absolute;
+    width: 1px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    left: 5%;
+}
+
+.borderLeftFooterBottom{
+    height: 100%;
+    position: absolute;
+    width: 1px;
+    background-color: white;
+    filter: brightness(50%);
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    left: 5%;
+}
+
+.topFooterHr{
+    position: absolute;
+    background-color: white;
+    height: 10%;
+    width: 1px;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+}
+
+.borderRightFooter{
+    height: 100%;
+    position: absolute;
+    width: 1px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    right: 5%;
+}
+
+.borderRightFooterBottom{
+    height: 100%;
+    position: absolute;
+    width: 1px;
+    background-color: white;
+    filter: brightness(50%);
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    right: 5%;
+}
+
+.footerTop{
+    height: 65%;
+    background-color: #657595;
+    width: 100%;
+    padding-top: 80px;
+    position: relative;
+}
+
+.footerBottom{
+    height: 35%;
+    width: 100%;
+    position: relative;
+    padding-top: 40px;
+}
+
+.f-t-Content{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: auto;
+    align-items: flex-start;
+}
+
+.f-b-content{
+    width: 75%;
+    margin: auto;
+}
+
+.f-b-content hr{
+    width: 100%;
+    margin: 20px auto;
+    background-color: white;
+    filter: brightness(10%);
+    z-index: 90;
+    position: relative;
+    height: 1px;
+}
+
+.f-t-l-Icon{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.f-t-IconItem{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.f-t-IconItem:hover{
+    background-color: #16d0c5;
+}
+
+.f-t-H3{
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 1px solid white;
+    padding-bottom: 20px;
+}
+
+.f-t-Ptag{
+    font-size: 13px;
+    color: white;
+    margin-bottom: 20px;
+    width: 85%;
+}
+
+.footerTopLeft{
+    width: 50%;
+    height: 100%;
+}
+
+.footerTopRight{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 50%;
+    height: 100%;
+}
+
+.f-t-r-contact, .f-t-r-forum{
+    height: 100%;
+}
+
+.f-t-r-f-access{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+}
+
+.f-t-r-f-access b, .f-t-r-f-contact b{
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: all 0.3s;
+    color: white;
+}
+
+.f-t-r-f-access b:hover, .f-t-r-f-contact b:hover{
+    text-decoration: none;
+}
+
+.f-b-H3{
+    color: #00163b;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 1px solid white;
+  
+}
+
+.topFooterLink{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.topFooterLink .f-b-link{
+    font-size: 13px;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: all 0.3s;
+    color: #00163b;
+
+}
+
+.topFooterLink .f-b-link:hover{
+    text-decoration: none;
+}
